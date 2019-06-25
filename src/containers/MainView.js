@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NewCustomerButton from '../components/NewCustomerButton/NewCustomerButton';
 import CustomerList from '../components/CustomerList/CustomerList';
 import MeniuButton from '../components/MeniuButton/MeniuButton';
+import '../components/CustomerList/CustomerList.css';
 
 class MainView extends Component {
     constructor(props) {

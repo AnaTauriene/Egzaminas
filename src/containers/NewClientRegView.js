@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Registration from '../components/Registration/Registration';
+import MainButton from '../components/MainButton/MainButton';
 
 class NewClientRegView extends Component {
     constructor(props) {
@@ -12,6 +13,8 @@ class NewClientRegView extends Component {
     render() {
         return (
             <div className="NewClientRegView">
+                <MainButton/>
+                <h1>Naujo kliento registracija</h1>
                 <Registration/>
             </div>
         );

@@ -1,22 +1,22 @@
 body{
-  background: lightyellow;
+  background: rgb(213, 241, 250);
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
 }
 
 .btn{
-  background: pink;
+  background:  pink;
   margin: 20px;
 }
 
 .add-btn{
-  background: lightblue;
+  background: pink;
   width: 40px;
   height: 40px;
 }
 .app-title{
   text-align: center;
-  color: lightblue;
+  color: pink;
   font-size: 70px;
 }
 .container{

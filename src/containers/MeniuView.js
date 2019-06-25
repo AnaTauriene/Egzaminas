@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../components/MeniuListComp/MeniuList.css';
+import MainButton from '../components/MainButton/MainButton';
 
 class MeniuView extends Component {
     constructor(props) {
@@ -76,8 +77,9 @@ class MeniuView extends Component {
       
       render() {
         return (
+          
           <div>
-    
+          <MainButton/>
           <h1 className="app-title">Restorano meniu</h1>
             
             <div className="container">

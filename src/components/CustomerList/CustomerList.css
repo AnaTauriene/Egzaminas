@@ -16,4 +16,11 @@ input#searchBar{
     box-shadow: 0px 10px 50px #555;
     background-color: #ffffff;
 }
+ 
+h1{
+text-align: center;
+color: pink;
+font-size: 70px;
+font-family: 'Montserrat', sans-serif;
+}
 

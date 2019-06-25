@@ -47,8 +47,7 @@ class CustomerList extends Component {
 
     render() {
         const { SearchBar } = Search;
-        const bgcolor = {backgroundColor: "#9ef7e8"};
-        const idStyle = {width: 60, backgroundColor: "#9ef7e8"};
+        const idStyle = {width: 60};
 
         const pageButtonRenderer = ({
             page,
