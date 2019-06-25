@@ -98,7 +98,6 @@ class Registration extends Component {
     this.props.history.push(path);
   }
 
-  //POST data of new user
   fetchData = async () => {
     const res = await fetch("http://localhost:8086/users", { 
       method: "POST",
@@ -172,7 +171,6 @@ class Registration extends Component {
     }
   }
 
-  //Validation of name and surname
   allLetter = (name, surname) => { 
     if ((/^[A-Za-ząčęėįšųūžĄČĘĖĮŠŲŪŽ]+$/.test(name)) && (/^[A-Za-ząčęėįšųūžĄČĘĖĮŠŲŪŽ]+$/.test(surname))) {
       return true;

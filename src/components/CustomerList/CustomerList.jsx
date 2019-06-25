@@ -185,7 +185,7 @@ class CustomerList extends Component {
         }
     }
 
-    fetchUser = async () => {
+    fetchUsers= async () => {
         const token = localStorage.getItem("token");
         const res = await fetch("http://localhost:8086/clients",
         {

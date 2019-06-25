@@ -203,7 +203,7 @@ class CustomerInfo extends Component {
 
     fetchUser = async () => {
         const token = localStorage.getItem("token");
-        const res = await fetch("http://localhost:8086/clients",
+        const res = await fetch("http://localhost:8086/clients/id",
         {
           method: "GET",
           headers: { 
@@ -216,7 +216,27 @@ class CustomerInfo extends Component {
         }
         const json = await res.json();      
         this.setState({ 
-            users: json
+            user: json
+        });  
+        return json;     
+    }
+
+    fetchDishes = async () => {
+        const token = localStorage.getItem("token");
+        const res = await fetch("http://localhost:8086/orders/id",
+        {
+          method: "GET",
+          headers: { 
+            "token": token,
+            "content-type": "application/json"
+          },
+        })
+        if (res.status > 300) {
+            alert("Fail")
+        }
+        const json = await res.json();      
+        this.setState({ 
+            dishes: json
         });  
         return json;     
     }

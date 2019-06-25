@@ -12,7 +12,7 @@ class MeniuButton extends Component {
     render() {
         return (
             <div>
-                <Button className="b" variant="dark" onClick={() =>this.nextPath(`/`)}>GRĮŽTI</Button>
+                <Button className="b" onClick={() =>this.nextPath(`/`)}>GRĮŽTI</Button>
             </div>
         );
     }

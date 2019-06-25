@@ -12,7 +12,7 @@ class NewCustomerButton extends Component {
     render() {
         return (
             <div>
-                <Button className="b" variant="dark" onClick={() =>this.nextPath(`/newclient`)}>UŽREGISTRUOTI NAUJĄ KLIENTĄ</Button>
+                <Button className="b" onClick={() =>this.nextPath(`/newclient`)}>UŽREGISTRUOTI NAUJĄ KLIENTĄ</Button>
             </div>
         );
     }
