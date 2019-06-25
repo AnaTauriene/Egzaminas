@@ -1,0 +1,26 @@
+th {
+    background-color:  #ffc0cb;
+}
+input#searchBar{
+    margin: 0;
+    float: left;
+    width: 30%;
+    border-color:  #17a2b8;
+}
+.toolkit{
+    width: 70%;
+    float: left;
+    margin: 20px 0 0 20px;
+    padding: 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 50px #555;
+    background-color: #ffffff;
+}
+ 
+h1{
+text-align: center;
+color: pink;
+font-size: 70px;
+font-family: 'Montserrat', sans-serif;
+}
+

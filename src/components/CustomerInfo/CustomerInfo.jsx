@@ -4,7 +4,7 @@ import filterFactory from 'react-bootstrap-table2-filter';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import 'react-bootstrap-table2-filter/dist/react-bootstrap-table2-filter.min.css';
-import './CustomerList.css';
+import './CustomerInfo.css';
 import 'react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit.min.css';
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit'
 import { withRouter } from 'react-router-dom';
@@ -12,12 +12,27 @@ import { withRouter } from 'react-router-dom';
 
 
 
-class CustomerList extends Component {
+class CustomerInfo extends Component {
     constructor(props) {
         super(props);
     
         this.state = {
-            users:[],
+            dishes:[{
+                frequency: "2",
+                food: "višta"
+            }, {
+                frequency: "10",
+                food: "kebabas"
+            }, {
+                frequency: "20",
+                food: "cezario salotos"
+            }, {
+                frequency: "18",
+                food: "sušiai"
+            }, {
+                frequency: "30",
+                food: "pica"
+            }],
             user:[{
                 id: '1',
                 Name: 'Ana',
@@ -26,50 +41,14 @@ class CustomerList extends Component {
                 AllergicToMilk: 'Ne',
                 alcohol: 'oh yes',
                 align: "center",
-            }, {id: '2',
-                Name: 'Dalia',
-                Surname: 'Krunglevičiūtė',
-                AllergicToNuts: 'Ne',
-                AllergicToMilk: 'Ne',
-                alcohol: 'oh yes',
-                align: "center",
-            }, {id: '3',
-                Name: 'Marius',
-                Surname: 'Pašakinskas',
-                AllergicToNuts: 'Ne',
-                AllergicToMilk: 'Ne',
-                alcohol: 'oh yes',
-                align: "center",
-            }, {
-                id: '4',
-                Name: 'Vytautas',
-                Surname: 'Gerdžiūnas',
-                AllergicToNuts: 'Yes',
-                AllergicToMilk: 'Ne',
-                alcohol: 'oh yes',
-                align: "center",
-            }, {id: '5',
-                Name: 'Kristina',
-                Surname: 'Dubikovienė',
-                AllergicToNuts: 'Ne',
-                AllergicToMilk: 'YEs',
-                alcohol: 'noooo',
-                align: "center",
-            }, {id: '6',
-                Name: 'Aurimas',
-                Surname: 'Vasauskas',
-                AllergicToNuts: 'Yes',
-                AllergicToMilk: 'Yes',
-                alcohol: 'noooo',
-                align: "center",
-            } ],
-
+            }]
         }
     } 
 
     render() {
         const { SearchBar } = Search;
         const idStyle = {width: 300};
+        const idStyle2 = {width: 600};
 
         const pageButtonRenderer = ({
             page,
@@ -98,7 +77,12 @@ class CustomerList extends Component {
             mode: 'radio',
             clickToSelect: true,
             onSelect: this.changeSelectStatus,
-        };                
+        };          
+        
+        const selectRow2 = 
+        {
+            clickToSelect: true,
+        };         
      
         const columns = [
         {
@@ -138,33 +122,65 @@ class CustomerList extends Component {
             headerStyle: idStyle,
         }]; 
 
+        const columnsFood = [
+            { 
+                dataField: 'frequency',
+                text: 'Dažns',
+                sort: true,
+                align: "center",
+                headerStyle: idStyle2,
+                
+            }, {
+                dataField: 'food',
+                text: 'Patiekalas',
+                sort: true,
+                align: "center", 
+                headerStyle: idStyle2,              
+            }]
 
-                return (
+        return (
             <div className="toolkit">
+                <div>
                 <ToolkitProvider
                     keyField="id"
                     data=  { this.state.user }
                     columns= { columns }
                     search
-                    >
+                    >                  
                     {
                         props => (
                             <div className="tableElem">                      
-                            <SearchBar 
-                                { ...props.searchProps } 
-                                placeholder='Paieška...' 
-                            />
-                                <br/>
                             <BootstrapTable 
                                 { ...props.baseProps }
-                                filter={ filterFactory()}
-                                selectRow={ selectRow }    
+                                filter={ filterFactory()}  
                             />                                            
                             </div>
                         )
                     }
                 </ToolkitProvider>
-            </div>            
+                </div>
+                <br/>
+                <div className="toolkit2">
+                    <ToolkitProvider
+                        keyField="frequency"
+                        data=  { this.state.dishes }
+                        columns= { columnsFood }
+                        search
+                        >                  
+                        {
+                            props => (
+                                <div className="tableElem">                      
+                                <BootstrapTable 
+                                    { ...props.baseProps }
+                                    filter={ filterFactory()}
+                                    selectRow={ selectRow2 }    
+                                />                                            
+                                </div>
+                            )
+                        }
+                    </ToolkitProvider>
+                </div> 
+            </div>                       
         );
     }
 
@@ -206,4 +222,4 @@ class CustomerList extends Component {
     }
 }
 
-export default withRouter(CustomerList);
+export default withRouter(CustomerInfo);

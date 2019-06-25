@@ -85,7 +85,7 @@ class Registration extends Component {
               />                                 
             </div>
             <div className="register" id="boxes">
-              <Button variant="primary" type="submit">
+              <Button variant="primary" type="submit" onClick={() =>this.nextPath(`/clientinfo`)}>
                   Registruoti
               </Button>
             </div> 
